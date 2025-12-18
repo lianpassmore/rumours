@@ -1,0 +1,97 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
+---
+
+<nav class="bg-rumours-cream sticky top-0 z-50 border-b border-gray-100 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      
+      <!-- LOGO -->
+      <div class="flex-shrink-0 flex items-center">
+        <a href="/" class="block hover:opacity-90 transition">
+          <img 
+            src="/logo.svg" 
+            alt="Rumours on Rust" 
+            class="h-12 md:h-16 w-auto"
+          />
+        </a>
+      </div>
+
+      <!-- DESKTOP MENU -->
+      <div class="hidden md:flex space-x-8 items-center font-serif text-lg tracking-wide">
+        <a 
+          href="/" 
+          class={`hover:text-rumours-rust transition ${pathname === '/' ? 'text-rumours-rust font-bold border-b-2 border-rumours-rust' : 'text-rumours-dark'}`}
+        >
+          Home
+        </a>
+        <a 
+          href="/catering" 
+          class={`hover:text-rumours-rust transition ${currentPath.startsWith('catering') ? 'text-rumours-rust font-bold border-b-2 border-rumours-rust' : 'text-rumours-dark'}`}
+        >
+          Catering
+        </a>
+        <a 
+          href="/contact" 
+          class={`hover:text-rumours-rust transition ${currentPath.startsWith('contact') ? 'text-rumours-rust font-bold border-b-2 border-rumours-rust' : 'text-rumours-dark'}`}
+        >
+          Contact
+        </a>
+        
+        <!-- CTA Button -->
+        <a 
+          href="/contact#location" 
+          class="bg-rumours-dark text-white text-base px-6 py-2 rounded-full hover:bg-gray-700 transition font-sans font-medium"
+        >
+          Find Us
+        </a>
+      </div>
+
+      <!-- MOBILE MENU BUTTON -->
+      <div class="flex items-center md:hidden">
+        <button 
+          id="mobile-menu-button" 
+          type="button" 
+          class="inline-flex items-center justify-center p-2 rounded-md text-rumours-dark hover:text-rumours-rust focus:outline-none" 
+          aria-controls="mobile-menu" 
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <!-- Icon: Menu -->
+          <svg id="menu-icon" class="block h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!-- Icon: X (Close) -->
+          <svg id="close-icon" class="hidden h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU LIST (Hidden by default) -->
+  <div class="hidden md:hidden bg-white border-t border-gray-100" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+      <a href="/" class="block px-3 py-4 rounded-md text-xl font-serif text-rumours-dark hover:text-rumours-rust hover:bg-gray-50">Home</a>
+      <a href="/catering" class="block px-3 py-4 rounded-md text-xl font-serif text-rumours-dark hover:text-rumours-rust hover:bg-gray-50">Catering</a>
+      <a href="/contact" class="block px-3 py-4 rounded-md text-xl font-serif text-rumours-dark hover:text-rumours-rust hover:bg-gray-50">Contact</a>
+      <a href="/contact#location" class="block mt-4 px-5 py-3 rounded-full text-base font-medium text-white bg-rumours-dark hover:bg-gray-700 w-1/2 mx-auto">Find Us</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Mobile Menu Logic
+  const btn = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    menuIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+  });
+</script>

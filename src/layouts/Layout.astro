@@ -1,0 +1,85 @@
+---
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+
+// Global Schema for AEO (Answer Engine Optimization)
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Rumours on Rust",
+  "image": "https://rumoursonrust.co.nz/images/social-share.jpg", 
+  "url": "https://rumoursonrust.co.nz",
+  "telephone": "+64211345897",
+  "email": "rumours.on.rust@gmail.com",
+  "priceRange": "$",
+  "servesCuisine": "Cafe, New Zealand, Organic, Vegetarian, Vegan, Gluten Free",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "25 Rust Avenue",
+    "addressLocality": "Whangārei",
+    "postalCode": "0110",
+    "addressCountry": "NZ"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -35.7251,
+    "longitude": 174.3237
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "07:30",
+      "closes": "14:00"
+    }
+  ]
+};
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Italiana&display=swap" rel="stylesheet">
+
+		<!-- Social Meta Tags -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://rumoursonrust.co.nz" />
+		<meta property="og:image" content="/images/social-share.jpg" />
+
+		<title>{title}</title>
+
+        <!-- AEO JSON-LD Schema -->
+        <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+	</head>
+	
+	<body class="bg-rumours-cream text-rumours-dark font-sans antialiased flex flex-col min-h-screen selection:bg-rumours-rust selection:text-white">
+        
+        <Navbar />
+
+		<main class="flex-grow">
+			<slot />
+		</main>
+
+        <Footer />
+        
+	</body>
+</html>

@@ -1,0 +1,50 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer style="background-color: #bbc2ac;" class="text-rumours-dark pt-16 pb-8 border-t border-gray-200 mt-auto">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 mb-12">
+
+        <!-- Column 1: Brand & Tagline -->
+        <div class="text-center md:text-left">
+            <img src="/logo.svg" alt="Rumours on Rust" class="h-16 w-auto mx-auto md:mx-0 mb-4" />
+            <p class="text-gray-700 text-lg italic mb-4">"Kia ora."</p>
+            <p class="text-gray-800 text-sm leading-relaxed max-w-xs mx-auto md:mx-0">
+                Whangārei's coolest little grab-and-go café.
+                Organic coffee, fresh inclusive food, and friendly service.
+            </p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="text-center">
+            <h3 class="font-serif text-xl mb-6 text-rumours-rust">Explore</h3>
+            <ul class="space-y-3 font-medium text-gray-800">
+                <li><a href="/" class="hover:text-rumours-rust transition">Home</a></li>
+                <li><a href="/catering" class="hover:text-rumours-rust transition">Catering Menu</a></li>
+                <li><a href="/contact" class="hover:text-rumours-rust transition">Contact & Hours</a></li>
+                <li><a href="https://www.facebook.com/p/Rumours-On-Rust-61577429531314/" target="_blank" class="hover:text-rumours-rust transition">Facebook</a></li>
+                <li><a href="https://www.instagram.com/rumoursonrust/" target="_blank" class="hover:text-rumours-rust transition">Instagram</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Contact Info -->
+        <div class="text-center md:text-right">
+            <h3 class="font-serif text-xl mb-6 text-rumours-rust">Find Us</h3>
+            <address class="not-italic text-gray-800 space-y-3">
+                <p>25 Rust Avenue</p>
+                <p>The Avenues, Whangārei 0110</p>
+                <p class="pt-2">
+                    <a href="tel:0211345897" class="hover:text-rumours-rust transition">021 134 5897</a>
+                </p>
+                <p>
+                    <a href="mailto:rumours.on.rust@gmail.com" class="hover:text-rumours-rust transition">rumours.on.rust@gmail.com</a>
+                </p>
+            </address>
+        </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-gray-300 pt-8 text-center text-gray-600 text-xs">
+        <p>&copy; {currentYear} Rumours on Rust. All rights reserved.</p>
+    </div>
+</footer>

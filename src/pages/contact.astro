@@ -1,0 +1,145 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Contact Rumours on Rust | Café & Catering Enquiries | Whangārei";
+const pageDesc = "Get in touch with Rumours on Rust café in Whangārei. Catering enquiries, general questions, or just to say kia ora.";
+---
+
+<Layout title={pageTitle} description={pageDesc}>
+
+    <!-- HERO SECTION WITH COFFEE BEAR BACKGROUND -->
+    <header class="relative py-32 px-6 text-center text-white overflow-hidden min-h-[50vh] flex items-center justify-center">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img
+                src="/coffee-bear2.jpg"
+                alt="Coffee Bear Latte Art at Rumours"
+                class="w-full h-full object-cover"
+                style="object-position: center 30%;"
+            />
+            <!-- Dark Overlay for readability -->
+            <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-rumours-dark"></div>
+        </div>
+
+        <div class="relative z-10 max-w-3xl mx-auto">
+            <h1 class="font-serif text-5xl md:text-6xl mb-6 drop-shadow-lg">Kia Ora – Get in Touch</h1>
+            <p class="text-xl md:text-2xl font-light opacity-95 drop-shadow-md leading-relaxed">
+                Got a question? Need catering sorted? <br class="hidden md:block" />
+                Just want to say hello?
+            </p>
+        </div>
+    </header>
+
+    <!-- MAIN CONTACT CONTENT -->
+    <section class="bg-white py-20 px-6">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16">
+            
+            <!-- LEFT COLUMN: Contact Info -->
+            <div class="space-y-10">
+                <div>
+                    <h2 class="font-serif text-4xl mb-6 text-rumours-dark">Talk to Us</h2>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        We don't use contact forms here—we prefer to chat properly. Give us a ring for quick questions or flick us an email for catering quotes.
+                    </p>
+                </div>
+
+                <div class="space-y-8">
+                    <!-- Phone -->
+                    <div class="flex items-start gap-5 group">
+                        <div class="bg-rumours-highlight p-4 rounded-full text-rumours-rust group-hover:bg-rumours-rust group-hover:text-white transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-xl text-rumours-dark">Phone</h3>
+                            <a href="tel:0211345897" class="text-lg text-gray-600 hover:text-rumours-rust transition border-b border-transparent hover:border-rumours-rust">
+                                021 134 5897
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="flex items-start gap-5 group">
+                        <div class="bg-rumours-highlight p-4 rounded-full text-rumours-rust group-hover:bg-rumours-rust group-hover:text-white transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-xl text-rumours-dark">Email</h3>
+                            <a href="mailto:rumours.on.rust@gmail.com" class="text-lg text-gray-600 hover:text-rumours-rust transition border-b border-transparent hover:border-rumours-rust">
+                                rumours.on.rust@gmail.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="flex items-start gap-5 group">
+                        <div class="bg-rumours-highlight p-4 rounded-full text-rumours-rust group-hover:bg-rumours-rust group-hover:text-white transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-xl text-rumours-dark">Connect</h3>
+                            <div class="flex gap-4 mt-1">
+                                <a href="https://www.facebook.com/p/Rumours-On-Rust-61577429531314/" target="_blank" class="text-lg text-gray-600 hover:text-rumours-rust transition border-b border-transparent hover:border-rumours-rust">
+                                    Facebook
+                                </a>
+                                <span class="text-gray-300">|</span>
+                                <a href="https://www.instagram.com/rumoursonrust/" target="_blank" class="text-lg text-gray-600 hover:text-rumours-rust transition border-b border-transparent hover:border-rumours-rust">
+                                    Instagram
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Hours -->
+            <div class="bg-rumours-cream p-10 rounded-2xl shadow-sm border border-orange-100 h-fit">
+                <h2 class="font-serif text-3xl mb-8 text-rumours-dark text-center">Opening Hours</h2>
+                <div class="space-y-4">
+                    <div class="flex justify-between border-b border-gray-200 pb-2">
+                        <span class="font-medium text-gray-700">Monday</span>
+                        <span class="font-bold text-rumours-dark">7:30am – 2:00pm</span>
+                    </div>
+                    <div class="flex justify-between border-b border-gray-200 pb-2">
+                        <span class="font-medium text-gray-700">Tuesday</span>
+                        <span class="font-bold text-rumours-dark">7:30am – 2:00pm</span>
+                    </div>
+                    <div class="flex justify-between border-b border-gray-200 pb-2">
+                        <span class="font-medium text-gray-700">Wednesday</span>
+                        <span class="font-bold text-rumours-dark">7:30am – 2:00pm</span>
+                    </div>
+                    <div class="flex justify-between border-b border-gray-200 pb-2">
+                        <span class="font-medium text-gray-700">Thursday</span>
+                        <span class="font-bold text-rumours-dark">7:30am – 2:00pm</span>
+                    </div>
+                    <div class="flex justify-between border-b border-gray-200 pb-2">
+                        <span class="font-medium text-gray-700">Friday</span>
+                        <span class="font-bold text-rumours-dark">7:30am – 2:00pm</span>
+                    </div>
+                    <div class="flex justify-between opacity-50 pt-2">
+                        <span class="font-medium text-gray-700">Weekends</span>
+                        <span class="text-gray-500 italic">Closed</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MAP SECTION -->
+    <section id="location" class="pb-16 bg-white">
+        <h2 class="font-serif text-4xl text-center mb-8 text-rumours-dark">Find Us</h2>
+        <div class="w-full h-96 bg-gray-200">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3184.8!2d174.32!3d-35.72!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQzJzMwLjAiUyAxNzTCsDE5JzEyLjAiRQ!5e0!3m2!1sen!2snz!4v1600000000000!5m2!1sen!2snz"
+                width="100%"
+                height="100%"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                class="grayscale hover:grayscale-0 transition duration-700">
+            </iframe>
+        </div>
+    </section>
+
+</Layout>

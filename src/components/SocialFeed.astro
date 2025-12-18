@@ -1,0 +1,30 @@
+---
+const facebookUrl = "https://www.facebook.com/p/Rumours-On-Rust-61577429531314/";
+---
+
+<section class="py-16 bg-rumours-sage border-t border-rumours-sage/20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="font-serif text-4xl mb-4 text-rumours-dark">See What's Fresh</h2>
+        <p class="text-lg text-gray-600 mb-8">
+            Check out our latest creations and daily specials on 
+            <a href={facebookUrl} target="_blank" class="text-rumours-rust font-bold hover:underline">Facebook</a>.
+        </p>
+
+        <!-- Fixed Width Container: Removed 'w-fit', added 'w-full' and 'max-w-lg' -->
+        <div class="flex justify-center bg-rumours-highlight p-4 rounded-xl shadow-inner mx-auto w-full max-w-[540px]">
+            <iframe 
+                src={`https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(facebookUrl)}&tabs=timeline&width=500&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId`}
+                width="500" 
+                height="600" 
+                style="border:none;overflow:hidden" 
+                scrolling="no" 
+                frameborder="0" 
+                allowfullscreen="true" 
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                loading="lazy"
+                title="Rumours on Rust Facebook Feed"
+                class="w-full"
+            ></iframe>
+        </div>
+    </div>
+</section>

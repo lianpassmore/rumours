@@ -1,0 +1,229 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SocialFeed from '../components/SocialFeed.astro';
+
+const pageTitle = "Rumours on Rust | $12 Lunch Boxes & Organic Coffee Whangārei";
+const pageDesc = "Whangārei's best value lunch. $12 hot lunch boxes daily, organic coffee, and fresh cabinet food. 25 Rust Avenue.";
+---
+
+<Layout title={pageTitle} description={pageDesc}>
+
+    <!-- HERO SECTION -->
+    <header class="relative h-[85vh] flex items-center justify-center overflow-hidden">
+        <div 
+            class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed"
+            style="background-image: url('/rumours.jpg');"
+        ></div>
+        <div class="absolute inset-0 z-10 bg-gradient-to-t from-black/80 via-black/40 to-black/30"></div>
+
+        <div class="relative z-20 text-center px-6 max-w-4xl mx-auto mt-10">
+            <span class="inline-block py-1 px-4 border border-white/40 rounded-full text-white/90 text-sm tracking-[0.2em] uppercase mb-6 backdrop-blur-sm">
+                The Avenues, Whangārei
+            </span>
+            <h1 class="font-serif text-6xl md:text-8xl text-white mb-6 leading-tight drop-shadow-xl">
+                Rumours <span class="italic text-rumours-highlight">on</span> Rust
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-100 font-light mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
+                Fresh kai. Locally roasted organic coffee. Friendly faces.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                <a href="#lunch-deal" style="background-color: #C87946;" class="text-white font-bold py-4 px-10 rounded-full hover:bg-white transition shadow-lg transform hover:-translate-y-1" onmouseenter="this.style.backgroundColor='white'; this.style.color='#C87946';" onmouseleave="this.style.backgroundColor='#C87946'; this.style.color='white';">
+                    See Daily Lunch
+                </a>
+                <a href="/catering" class="backdrop-blur-md bg-white/10 border-2 border-white text-white font-bold py-4 px-10 rounded-full hover:bg-white transition" onmouseenter="this.style.backgroundColor='white'; this.style.color='#2D3032';" onmouseleave="this.style.backgroundColor='rgba(255,255,255,0.1)'; this.style.color='white';">
+                    Catering
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- NEW: THE $12 LUNCH BOX SECTION -->
+    <section id="lunch-deal" class="py-20 bg-rumours-cream px-6">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+            
+            <!-- Text Content -->
+            <div class="order-2 lg:order-1">
+                <span class="text-rumours-rust font-bold tracking-widest uppercase text-sm mb-2 block">Whangārei's Best Kept Secret</span>
+                <h2 class="font-serif text-5xl md:text-6xl text-rumours-dark mb-6 leading-tight">
+                    Lunch Sorted.<br/>
+                    <span class="text-rumours-rust italic">Every Single Day.</span>
+                </h2>
+                <p class="text-xl text-gray-700 mb-6 leading-relaxed">
+                    Forget the sad desk sandwich. Come in for our famous hot lunch boxes and fresh salads. The menu changes daily, but the value stays the same.
+                </p>
+                
+                <!-- Price Highlight -->
+                <div class="flex items-center gap-6 mb-8 bg-white p-6 rounded-xl shadow-sm border border-gray-100 w-fit">
+                    <div class="text-center">
+                        <span class="block text-gray-500 text-sm font-bold uppercase">From Just</span>
+                        <span class="block text-5xl font-serif text-rumours-dark font-bold">$12</span>
+                    </div>
+                    <div class="h-12 w-px bg-gray-200"></div>
+                    <div>
+                        <p class="font-medium text-gray-800">Hot Mains, Curries, Stews</p>
+                        <p class="font-medium text-gray-800">& Fresh Salad Boxes</p>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <div class="flex items-center gap-3 text-gray-700">
+                        <svg class="w-5 h-5 text-rumours-sage" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                        <span>Hot Mac & Cheese, Casseroles & Curries</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-gray-700">
+                        <svg class="w-5 h-5 text-rumours-sage" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                        <span>Keto & Gluten-Free Options</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-gray-700">
+                        <svg class="w-5 h-5 text-rumours-sage" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                        <span>Generous portions ($12 - $16 range)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Grid -->
+            <div class="order-1 lg:order-2 grid grid-cols-2 gap-4">
+                <div class="space-y-4">
+                    <!-- Tall Grid Photo (Top Left) -->
+                    <div class="h-64 md:h-80 rounded-2xl overflow-hidden shadow-lg border-2 border-white">
+                        <img src="/lunch-grid.jpg" alt="Daily Lunch Box Variety" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
+                    </div>
+                    <!-- Small Photo (Bottom Left) -->
+                    <div class="h-40 md:h-48 rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-rumours-sage/20 flex items-center justify-center">
+                        <p class="font-serif text-2xl text-rumours-dark text-center px-4 leading-tight">"Best value lunch in town"</p>
+                    </div>
+                </div>
+                <div class="space-y-4 pt-8">
+                    <!-- Tall Photo (Top Right - Offset) -->
+                     <div class="h-64 md:h-80 rounded-2xl overflow-hidden shadow-lg border-2 border-white">
+                        <img src="/hot-lunch.jpg" alt="Hot trays of Mac and Cheese" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
+                    </div>
+                     <!-- Small Photo (Bottom Right) -->
+                     <div class="h-40 md:h-48 rounded-2xl overflow-hidden shadow-lg border-2 border-white">
+                        <img src="/bap.jpg" alt="Savoury Baps" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COFFEE SPOTLIGHT SECTION -->
+    <section class="py-20 bg-white px-6 border-y border-gray-100">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <!-- Image Side -->
+            <div class="md:w-1/2 relative">
+                <div class="absolute -top-4 -left-4 w-24 h-24 bg-rumours-highlight rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
+                <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-rumours-sage rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
+                <img src="/coffee-bear.jpg" alt="Latte Art Bear at Rumours on Rust" class="relative z-10 rounded-2xl shadow-2xl w-full max-w-md mx-auto transform rotate-2 hover:rotate-0 transition duration-500" />
+            </div>
+
+            <!-- Text Side -->
+            <div class="md:w-1/2 text-center md:text-left">
+                <h2 class="font-serif text-4xl md:text-5xl text-rumours-dark mb-6">Kawhe me te Kōrero</h2>
+                <h3 class="font-sans font-bold text-rumours-rust text-xl mb-4 uppercase tracking-wide">Coffee & Conversation</h3>
+                <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                    We take our coffee seriously. Pouring our own signature <strong>Rumours Blend</strong>—locally roasted, organic, and made with love.
+                </p>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                    Whether you need a double-shot jumpstart or a fluffy cappuccino to linger over, our baristas work their magic in every cup.
+                </p>
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                    <span class="bg-rumours-cream px-4 py-2 rounded-lg text-rumours-dark font-medium text-sm">Organic Beans</span>
+                    <span class="bg-rumours-cream px-4 py-2 rounded-lg text-rumours-dark font-medium text-sm">Alternative Milks</span>
+                    <span class="bg-rumours-cream px-4 py-2 rounded-lg text-rumours-dark font-medium text-sm">Bear Art Included 🐻</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CABINET SECTION -->
+    <section class="py-20 px-6 bg-rumours-cream">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl text-rumours-dark mb-4">Also in the Cabinet</h2>
+                <p class="text-gray-600">If you aren't feeling a hot lunch, our cabinet is stacked.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="h-48 rounded-lg overflow-hidden mb-4">
+                        <img src="/sandwhich.jpg" alt="Fresh Sandwiches" class="w-full h-full object-cover" />
+                    </div>
+                    <h3 class="font-serif text-2xl mb-2 text-rumours-dark">Sandwiches & Wraps</h3>
+                    <p class="text-gray-600 text-sm">Grab-and-go goodness. Roast Beef, Cajun Tofu (Vegan), or Smoked Chicken.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="h-48 rounded-lg overflow-hidden mb-4">
+                        <img src="/pie.jpg" alt="Famous Pies" class="w-full h-full object-cover" />
+                    </div>
+                    <h3 class="font-serif text-2xl mb-2 text-rumours-dark">Famous Pies</h3>
+                    <p class="text-gray-600 text-sm">Brisket, Cranberry & Venison, or flaky meat pies. The locals' favorite.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="h-48 rounded-lg overflow-hidden mb-4">
+                        <img src="/sweet.jpg" alt="Sweet Treats" class="w-full h-full object-cover" />
+                    </div>
+                    <h3 class="font-serif text-2xl mb-2 text-rumours-dark">Sweet Treats</h3>
+                    <p class="text-gray-600 text-sm">Black Forest Brownies, Walnut Danishes, and GF Banana Caramilk Muffins.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL BANNER -->
+    <section style="background-color: #bbc2ac;" class="py-20 px-6 text-white text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div class="relative max-w-4xl mx-auto">
+            <p class="font-serif text-3xl md:text-5xl italic mb-8 leading-tight">"Really good coffee. Brisket pie 👌"</p>
+            <p class="font-sans font-bold tracking-widest text-sm uppercase opacity-90">— Korn Lab, Kettle Korn</p>
+        </div>
+    </section>
+
+    <!-- SOCIAL FEED -->
+    <SocialFeed />
+
+    <!-- LOCATION/HOURS -->
+    <section id="location" style="background-color: #2D3032;" class="py-24 text-white px-6">
+        <h2 class="font-serif text-4xl md:text-5xl text-center mb-16" style="color: #fdedd5;">You Can Find Us Here</h2>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="order-2 md:order-1 h-80 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3184.8!2d174.32!3d-35.72!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQzJzMwLjAiUyAxNzTCsDE5JzEyLjAiRQ!5e0!3m2!1sen!2snz!4v1600000000000!5m2!1sen!2snz" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" class="grayscale hover:grayscale-0 transition duration-700">
+                </iframe>
+            </div>
+            <div class="order-1 md:order-2">
+                <h2 class="font-serif text-5xl mb-8" style="color: #fdedd5;">Come Find Us</h2>
+                <div class="space-y-8">
+                    <div class="flex items-start gap-6">
+                        <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-rumours-highlight flex-shrink-0">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-xl mb-1">25 Rust Avenue</h3>
+                            <p class="text-gray-400">The Avenues, Whangārei 0110</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-6">
+                        <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-rumours-highlight flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-xl mb-1">7:30am – 2:00pm</h3>
+                            <p class="text-gray-400">Monday to Friday (Closed Weekends)</p>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <a href="tel:0211345897" class="inline-block bg-white font-bold py-3 px-8 rounded-full transition" style="color: #2D3032;" onmouseenter="this.style.backgroundColor='#fdedd5';" onmouseleave="this.style.backgroundColor='white';">
+                            Call 021 134 5897
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</Layout>
