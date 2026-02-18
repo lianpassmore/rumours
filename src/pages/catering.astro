@@ -3,9 +3,75 @@ import Layout from '../layouts/Layout.astro';
 
 const pageTitle = "Catering Whangārei | Kai Boxes & Office Catering | Rumours on Rust";
 const pageDesc = "Fresh catering in Whangārei. Kai Boxes, corporate morning teas, and function catering. Vegan and gluten-free options available.";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much notice do you need for catering in Whangārei?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The more notice the better, but we can sometimes squeeze in last-minute orders. Flick us a message and we'll see what we can do."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you deliver catering in Whangārei?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pickup from our Rust Avenue café is standard. For larger orders, get in touch and we can chat about delivery options in Whangārei."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you cater for dietary requirements like vegan and gluten-free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. We offer vegan, gluten-free, vegetarian, and dairy-free catering options."
+      }
+    }
+  ]
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Order Catering from Rumours on Rust",
+  "description": "Order fresh catering in Whangārei from Rumours on Rust café.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Get in Touch",
+      "text": "Email or phone us with your headcount."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "We Quote",
+      "text": "We'll send options and pricing."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "We Make It",
+      "text": "Freshly made that morning on Rust Ave."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Pickup",
+      "text": "Collect from the café or ask about delivery."
+    }
+  ]
+};
+
+const schemas = [faqSchema, howToSchema];
 ---
 
-<Layout title={pageTitle} description={pageDesc}>
+<Layout title={pageTitle} description={pageDesc} schemas={schemas}>
     
     <!-- HERO SECTION -->
     <header class="relative py-32 px-6 text-center text-white overflow-hidden min-h-[60vh] flex items-center justify-center">
@@ -13,7 +79,7 @@ const pageDesc = "Fresh catering in Whangārei. Kai Boxes, corporate morning tea
         <!-- Hero Background Image: BAP.JPG -->
         <div class="absolute inset-0 z-0">
             <img
-                src="/bap.jpg"
+                src="/bap.webp"
                 alt="Fresh Catering Baps and Rolls"
                 class="w-full h-full object-cover"
             />
@@ -55,13 +121,13 @@ const pageDesc = "Fresh catering in Whangārei. Kai Boxes, corporate morning tea
             <h2 class="font-serif text-4xl text-center mb-12 text-rumours-dark">Our Catering Spreads</h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
-                    <img src="/catering.jpg" alt="Catering Display 1" class="w-full h-64 object-cover hover:scale-105 transition duration-700" />
+                    <img src="/catering.webp" alt="Catering Display 1" class="w-full h-64 object-cover hover:scale-105 transition duration-700" />
                 </div>
                 <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
-                    <img src="/catering2.jpg" alt="Catering Display 2" class="w-full h-64 object-cover hover:scale-105 transition duration-700" style="object-position: center 90%;" />
+                    <img src="/catering2.webp" alt="Catering Display 2" class="w-full h-64 object-cover hover:scale-105 transition duration-700" style="object-position: center 90%;" />
                 </div>
                 <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
-                    <img src="/catering3.jpg" alt="Catering Display 3" class="w-full h-64 object-cover hover:scale-105 transition duration-700" />
+                    <img src="/catering3.webp" alt="Catering Display 3" class="w-full h-64 object-cover hover:scale-105 transition duration-700" />
                 </div>
             </div>
         </div>
@@ -91,7 +157,7 @@ const pageDesc = "Fresh catering in Whangārei. Kai Boxes, corporate morning tea
                     <h3 class="font-serif text-2xl mb-4 text-rumours-dark">Morning Tea</h3>
                     <p class="text-sm mb-4 italic">Corporate shouts & sweet treats.</p>
                     <ul class="space-y-2 text-gray-700">
-                        <li>• Famous Brisket & Venison Pies</li>
+                        <li>• Frittatas & Club Sandwiches</li>
                         <li>• Walnut Danishes</li>
                         <li>• Vegan Brownies</li>
                         <li>• Gluten-Free Muffins</li>

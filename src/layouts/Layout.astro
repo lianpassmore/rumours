@@ -6,9 +6,35 @@ import Footer from '../components/Footer.astro';
 interface Props {
 	title: string;
 	description: string;
+	schemas?: object[];
 }
 
-const { title, description } = Astro.props;
+const { title, description, schemas = [] } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL('/rumours.webp', Astro.site);
+
+// Build breadcrumb schema from current path
+const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+const breadcrumbItems = [
+  {
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": Astro.site?.toString().replace(/\/$/, '')
+  },
+  ...pathSegments.map((segment, i) => ({
+    "@type": "ListItem",
+    "position": i + 2,
+    "name": segment.charAt(0).toUpperCase() + segment.slice(1),
+    "item": new URL(pathSegments.slice(0, i + 1).join('/'), Astro.site).toString()
+  }))
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbItems
+};
 
 // Global Schema for AEO (Answer Engine Optimization)
 const schema = {
@@ -50,25 +76,43 @@ const schema = {
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
+		<meta name="robots" content="index, follow" />
+		<meta name="theme-color" content="#C87946" />
+		<meta name="author" content="Rumours on Rust" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
+		<link rel="canonical" href={canonicalURL} />
 		<meta name="generator" content={Astro.generator} />
-		
+
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Italiana&display=swap" rel="stylesheet">
 
-		<!-- Social Meta Tags -->
+		<!-- Open Graph -->
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://rumoursonrust.co.nz" />
-		<meta property="og:image" content="/images/social-share.jpg" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:locale" content="en_NZ" />
+		<meta property="og:site_name" content="Rumours on Rust" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
 
 		<title>{title}</title>
 
-        <!-- AEO JSON-LD Schema -->
-        <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+		<!-- AEO JSON-LD Schema: Global CafeOrCoffeeShop -->
+		<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+		<!-- Breadcrumb Schema -->
+		<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+		<!-- Page-specific schemas -->
+		{schemas.map((s) => (
+			<script type="application/ld+json" set:html={JSON.stringify(s)} />
+		))}
 	</head>
 	
 	<body class="bg-rumours-cream text-rumours-dark font-sans antialiased flex flex-col min-h-screen selection:bg-rumours-rust selection:text-white">

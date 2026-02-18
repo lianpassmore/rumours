@@ -2,17 +2,95 @@
 import Layout from '../layouts/Layout.astro';
 import SocialFeed from '../components/SocialFeed.astro';
 
-const pageTitle = "Rumours on Rust | $12 Lunch Boxes & Organic Coffee Whangārei";
-const pageDesc = "Whangārei's best value lunch. $12 hot lunch boxes daily, organic coffee, and fresh cabinet food. 25 Rust Avenue.";
+const pageTitle = "Rumours on Rust | $13 Lunch Boxes & Organic Coffee Whangārei";
+const pageDesc = "Whangārei's best value lunch. $13 hot lunch boxes daily, organic coffee, and fresh cabinet food. 25 Rust Avenue.";
+
+const menuSchema = {
+  "@context": "https://schema.org",
+  "@type": "Menu",
+  "name": "Rumours on Rust Daily Menu",
+  "hasMenuSection": [
+    {
+      "@type": "MenuSection",
+      "name": "Hot Lunch Boxes",
+      "description": "Daily hot lunch boxes from $13. Includes Mac & Cheese, Casseroles, Curries, and slow cooked meats. Keto and gluten-free options available.",
+      "hasMenuItem": [
+        {
+          "@type": "MenuItem",
+          "name": "Hot Lunch Box",
+          "description": "Daily changing hot lunch box with generous portions. Options include Mac & Cheese, Casseroles, Curries, and slow cooked meats.",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "NZD",
+            "price": "13.00",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "13.00",
+              "maxPrice": "17.00",
+              "priceCurrency": "NZD"
+            }
+          },
+          "suitableForDiet": [
+            "https://schema.org/GlutenFreeDiet"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "MenuSection",
+      "name": "Cabinet Food",
+      "hasMenuItem": [
+        {
+          "@type": "MenuItem",
+          "name": "Sandwiches & Wraps",
+          "description": "Grab-and-go goodness. Roast Beef, Cajun Tofu (Vegan), or Smoked Chicken."
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Breakfast Options",
+          "description": "An assortment of breakfast options including overnight oats."
+        },
+        {
+          "@type": "MenuItem",
+          "name": "Sweet Treats",
+          "description": "Black Forest Brownies, Walnut Danishes, and GF Banana Caramilk Muffins."
+        }
+      ]
+    }
+  ]
+};
+
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "reviewBody": "Really good coffee. Really good food.",
+  "author": {
+    "@type": "Person",
+    "name": "Korn Lab, Kettle Korn"
+  },
+  "itemReviewed": {
+    "@type": "CafeOrCoffeeShop",
+    "name": "Rumours on Rust",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "25 Rust Avenue",
+      "addressLocality": "Whangārei",
+      "postalCode": "0110",
+      "addressCountry": "NZ"
+    }
+  }
+};
+
+const schemas = [menuSchema, reviewSchema];
 ---
 
-<Layout title={pageTitle} description={pageDesc}>
+<Layout title={pageTitle} description={pageDesc} schemas={schemas}>
 
     <!-- HERO SECTION -->
     <header class="relative h-[85vh] flex items-center justify-center overflow-hidden">
         <div 
             class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed"
-            style="background-image: url('/rumours.jpg');"
+            style="background-image: url('/rumours.webp');"
         ></div>
         <div class="absolute inset-0 z-10 bg-gradient-to-t from-black/80 via-black/40 to-black/30"></div>
 
@@ -37,7 +115,7 @@ const pageDesc = "Whangārei's best value lunch. $12 hot lunch boxes daily, orga
         </div>
     </header>
 
-    <!-- NEW: THE $12 LUNCH BOX SECTION -->
+    <!-- NEW: THE $13 LUNCH BOX SECTION -->
     <section id="lunch-deal" class="py-20 bg-rumours-cream px-6">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
             
@@ -56,12 +134,11 @@ const pageDesc = "Whangārei's best value lunch. $12 hot lunch boxes daily, orga
                 <div class="flex items-center gap-6 mb-8 bg-white p-6 rounded-xl shadow-sm border border-gray-100 w-fit">
                     <div class="text-center">
                         <span class="block text-gray-500 text-sm font-bold uppercase">From Just</span>
-                        <span class="block text-5xl font-serif text-rumours-dark font-bold">$12</span>
+                        <span class="block text-5xl font-serif text-rumours-dark font-bold">$13</span>
                     </div>
                     <div class="h-12 w-px bg-gray-200"></div>
                     <div>
-                        <p class="font-medium text-gray-800">Hot Mains, Curries, Stews</p>
-                        <p class="font-medium text-gray-800">& Fresh Salad Boxes</p>
+                        <p class="font-medium text-gray-800">Hot Mains, Curries, Slow Cooked Meats</p>
                     </div>
                 </div>
 
@@ -76,9 +153,11 @@ const pageDesc = "Whangārei's best value lunch. $12 hot lunch boxes daily, orga
                     </div>
                     <div class="flex items-center gap-3 text-gray-700">
                         <svg class="w-5 h-5 text-rumours-sage" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                        <span>Generous portions ($12 - $16 range)</span>
+                        <span>Generous portions ($13 - $17 range)</span>
                     </div>
                 </div>
+
+                <p class="mt-6 text-sm text-gray-500">Also available on <a href="https://www.ubereats.com/nz/store/rumours/FWxX3peGUgScFeXbyXF4Yw" target="_blank" rel="noopener noreferrer" class="text-rumours-rust underline hover:text-rumours-dark transition">Uber Eats</a></p>
             </div>
 
             <!-- Image Grid -->
@@ -86,7 +165,7 @@ const pageDesc = "Whangārei's best value lunch. $12 hot lunch boxes daily, orga
                 <div class="space-y-4">
                     <!-- Tall Grid Photo (Top Left) -->
                     <div class="h-64 md:h-80 rounded-2xl overflow-hidden shadow-lg border-2 border-white">
-                        <img src="/lunch-grid.jpg" alt="Daily Lunch Box Variety" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
+                        <img src="/lunch-grid.webp" alt="Daily Lunch Box Variety" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
                     </div>
                     <!-- Small Photo (Bottom Left) -->
                     <div class="h-40 md:h-48 rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-rumours-sage/20 flex items-center justify-center">
@@ -96,41 +175,12 @@ const pageDesc = "Whangārei's best value lunch. $12 hot lunch boxes daily, orga
                 <div class="space-y-4 pt-8">
                     <!-- Tall Photo (Top Right - Offset) -->
                      <div class="h-64 md:h-80 rounded-2xl overflow-hidden shadow-lg border-2 border-white">
-                        <img src="/hot-lunch.jpg" alt="Hot trays of Mac and Cheese" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
+                        <img src="/salads2.webp" alt="Fresh Salads" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
                     </div>
                      <!-- Small Photo (Bottom Right) -->
                      <div class="h-40 md:h-48 rounded-2xl overflow-hidden shadow-lg border-2 border-white">
-                        <img src="/bap.jpg" alt="Savoury Baps" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
+                        <img src="/bap.webp" alt="Savoury Baps" class="w-full h-full object-cover hover:scale-105 transition duration-700" />
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- COFFEE SPOTLIGHT SECTION -->
-    <section class="py-20 bg-white px-6 border-y border-gray-100">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
-            <!-- Image Side -->
-            <div class="md:w-1/2 relative">
-                <div class="absolute -top-4 -left-4 w-24 h-24 bg-rumours-highlight rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
-                <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-rumours-sage rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
-                <img src="/coffee-bear.jpg" alt="Latte Art Bear at Rumours on Rust" class="relative z-10 rounded-2xl shadow-2xl w-full max-w-md mx-auto transform rotate-2 hover:rotate-0 transition duration-500" />
-            </div>
-
-            <!-- Text Side -->
-            <div class="md:w-1/2 text-center md:text-left">
-                <h2 class="font-serif text-4xl md:text-5xl text-rumours-dark mb-6">Kawhe me te Kōrero</h2>
-                <h3 class="font-sans font-bold text-rumours-rust text-xl mb-4 uppercase tracking-wide">Coffee & Conversation</h3>
-                <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                    We take our coffee seriously. Pouring our own signature <strong>Rumours Blend</strong>—locally roasted, organic, and made with love.
-                </p>
-                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                    Whether you need a double-shot jumpstart or a fluffy cappuccino to linger over, our baristas work their magic in every cup.
-                </p>
-                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-                    <span class="bg-rumours-cream px-4 py-2 rounded-lg text-rumours-dark font-medium text-sm">Organic Beans</span>
-                    <span class="bg-rumours-cream px-4 py-2 rounded-lg text-rumours-dark font-medium text-sm">Alternative Milks</span>
-                    <span class="bg-rumours-cream px-4 py-2 rounded-lg text-rumours-dark font-medium text-sm">Bear Art Included 🐻</span>
                 </div>
             </div>
         </div>
@@ -148,7 +198,7 @@ const pageDesc = "Whangārei's best value lunch. $12 hot lunch boxes daily, orga
                 <!-- Card 1 -->
                 <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
                     <div class="h-48 rounded-lg overflow-hidden mb-4">
-                        <img src="/sandwhich.jpg" alt="Fresh Sandwiches" class="w-full h-full object-cover" />
+                        <img src="/sandwhich.webp" alt="Fresh Sandwiches" class="w-full h-full object-cover" />
                     </div>
                     <h3 class="font-serif text-2xl mb-2 text-rumours-dark">Sandwiches & Wraps</h3>
                     <p class="text-gray-600 text-sm">Grab-and-go goodness. Roast Beef, Cajun Tofu (Vegan), or Smoked Chicken.</p>
@@ -156,15 +206,15 @@ const pageDesc = "Whangārei's best value lunch. $12 hot lunch boxes daily, orga
                 <!-- Card 2 -->
                 <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
                     <div class="h-48 rounded-lg overflow-hidden mb-4">
-                        <img src="/pie.jpg" alt="Famous Pies" class="w-full h-full object-cover" />
+                        <img src="/overnightoats.webp" alt="Overnight Oats" class="w-full h-full object-cover" />
                     </div>
-                    <h3 class="font-serif text-2xl mb-2 text-rumours-dark">Famous Pies</h3>
-                    <p class="text-gray-600 text-sm">Brisket, Cranberry & Venison, or flaky meat pies. The locals' favorite.</p>
+                    <h3 class="font-serif text-2xl mb-2 text-rumours-dark">Breakfast Options</h3>
+                    <p class="text-gray-600 text-sm">An assortment of breakfast options that you can eat all day long.</p>
                 </div>
                 <!-- Card 3 -->
                 <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
                     <div class="h-48 rounded-lg overflow-hidden mb-4">
-                        <img src="/sweet.jpg" alt="Sweet Treats" class="w-full h-full object-cover" />
+                        <img src="/sweet.webp" alt="Sweet Treats" class="w-full h-full object-cover" />
                     </div>
                     <h3 class="font-serif text-2xl mb-2 text-rumours-dark">Sweet Treats</h3>
                     <p class="text-gray-600 text-sm">Black Forest Brownies, Walnut Danishes, and GF Banana Caramilk Muffins.</p>
@@ -177,7 +227,7 @@ const pageDesc = "Whangārei's best value lunch. $12 hot lunch boxes daily, orga
     <section style="background-color: #bbc2ac;" class="py-20 px-6 text-white text-center relative overflow-hidden">
         <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
         <div class="relative max-w-4xl mx-auto">
-            <p class="font-serif text-3xl md:text-5xl italic mb-8 leading-tight">"Really good coffee. Brisket pie 👌"</p>
+            <p class="font-serif text-3xl md:text-5xl italic mb-8 leading-tight">"Really good coffee. Really good food 👌"</p>
             <p class="font-sans font-bold tracking-widest text-sm uppercase opacity-90">— Korn Lab, Kettle Korn</p>
         </div>
     </section>

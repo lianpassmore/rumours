@@ -3,17 +3,49 @@ import Layout from '../layouts/Layout.astro';
 
 const pageTitle = "Contact Rumours on Rust | Café & Catering Enquiries | Whangārei";
 const pageDesc = "Get in touch with Rumours on Rust café in Whangārei. Catering enquiries, general questions, or just to say kia ora.";
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "mainEntity": {
+    "@type": "LocalBusiness",
+    "name": "Rumours on Rust",
+    "telephone": "+64211345897",
+    "email": "rumours.on.rust@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "25 Rust Avenue",
+      "addressLocality": "Whangārei",
+      "postalCode": "0110",
+      "addressCountry": "NZ"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "07:30",
+        "closes": "14:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/p/Rumours-On-Rust-61577429531314/",
+      "https://www.instagram.com/rumoursonrust/"
+    ]
+  }
+};
+
+const schemas = [contactSchema];
 ---
 
-<Layout title={pageTitle} description={pageDesc}>
+<Layout title={pageTitle} description={pageDesc} schemas={schemas}>
 
-    <!-- HERO SECTION WITH COFFEE BEAR BACKGROUND -->
+    <!-- HERO SECTION WITH BACKGROUND -->
     <header class="relative py-32 px-6 text-center text-white overflow-hidden min-h-[50vh] flex items-center justify-center">
         <!-- Background Image -->
         <div class="absolute inset-0 z-0">
             <img
-                src="/coffee-bear2.jpg"
-                alt="Coffee Bear Latte Art at Rumours"
+                src="/coffee-bear2.webp"
+                alt="Coffee at Rumours"
                 class="w-full h-full object-cover"
                 style="object-position: center 30%;"
             />
@@ -78,11 +110,11 @@ const pageDesc = "Get in touch with Rumours on Rust café in Whangārei. Caterin
                         <div>
                             <h3 class="font-bold text-xl text-rumours-dark">Connect</h3>
                             <div class="flex gap-4 mt-1">
-                                <a href="https://www.facebook.com/p/Rumours-On-Rust-61577429531314/" target="_blank" class="text-lg text-gray-600 hover:text-rumours-rust transition border-b border-transparent hover:border-rumours-rust">
+                                <a href="https://www.facebook.com/p/Rumours-On-Rust-61577429531314/" target="_blank" rel="noopener noreferrer" class="text-lg text-gray-600 hover:text-rumours-rust transition border-b border-transparent hover:border-rumours-rust">
                                     Facebook
                                 </a>
                                 <span class="text-gray-300">|</span>
-                                <a href="https://www.instagram.com/rumoursonrust/" target="_blank" class="text-lg text-gray-600 hover:text-rumours-rust transition border-b border-transparent hover:border-rumours-rust">
+                                <a href="https://www.instagram.com/rumoursonrust/" target="_blank" rel="noopener noreferrer" class="text-lg text-gray-600 hover:text-rumours-rust transition border-b border-transparent hover:border-rumours-rust">
                                     Instagram
                                 </a>
                             </div>
@@ -98,23 +130,23 @@ const pageDesc = "Get in touch with Rumours on Rust café in Whangārei. Caterin
                 <div class="space-y-4">
                     <div class="flex justify-between border-b border-gray-200 pb-2">
                         <span class="font-medium text-gray-700">Monday</span>
-                        <span class="font-bold text-rumours-dark">7:30am – 2:00pm</span>
+                        <span class="font-bold text-rumours-dark"><time datetime="07:30">7:30am</time> – <time datetime="14:00">2:00pm</time></span>
                     </div>
                     <div class="flex justify-between border-b border-gray-200 pb-2">
                         <span class="font-medium text-gray-700">Tuesday</span>
-                        <span class="font-bold text-rumours-dark">7:30am – 2:00pm</span>
+                        <span class="font-bold text-rumours-dark"><time datetime="07:30">7:30am</time> – <time datetime="14:00">2:00pm</time></span>
                     </div>
                     <div class="flex justify-between border-b border-gray-200 pb-2">
                         <span class="font-medium text-gray-700">Wednesday</span>
-                        <span class="font-bold text-rumours-dark">7:30am – 2:00pm</span>
+                        <span class="font-bold text-rumours-dark"><time datetime="07:30">7:30am</time> – <time datetime="14:00">2:00pm</time></span>
                     </div>
                     <div class="flex justify-between border-b border-gray-200 pb-2">
                         <span class="font-medium text-gray-700">Thursday</span>
-                        <span class="font-bold text-rumours-dark">7:30am – 2:00pm</span>
+                        <span class="font-bold text-rumours-dark"><time datetime="07:30">7:30am</time> – <time datetime="14:00">2:00pm</time></span>
                     </div>
                     <div class="flex justify-between border-b border-gray-200 pb-2">
                         <span class="font-medium text-gray-700">Friday</span>
-                        <span class="font-bold text-rumours-dark">7:30am – 2:00pm</span>
+                        <span class="font-bold text-rumours-dark"><time datetime="07:30">7:30am</time> – <time datetime="14:00">2:00pm</time></span>
                     </div>
                     <div class="flex justify-between opacity-50 pt-2">
                         <span class="font-medium text-gray-700">Weekends</span>

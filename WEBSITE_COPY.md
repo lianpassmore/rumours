@@ -21,10 +21,10 @@ Fresh kai. Locally roasted organic coffee. Friendly faces.
 
 ---
 
-### The $12 Lunch Box Section
+### The $13 Lunch Box Section
 
 **Heading:**
-The $12 Lunch Box
+The $13 Lunch Box
 
 **Subheading:**
 Fresh. Filling. Famous.
@@ -53,12 +53,12 @@ Coffee & Conversation
 **Body Copy:**
 We take our coffee seriously. Pouring our own signature **Rumours Blend**—locally roasted, organic, and made with love.
 
-Come for a flat white. Stay for a chat. We do proper barista coffee and latte art that'll make you smile (bear included 🐻).
+Come for a flat white. Stay for a chat. We do proper barista coffee made with love.
 
 **Feature Badges:**
 - Organic Beans
 - Alternative Milks
-- Bear Art Included 🐻
+- Made with Love
 
 ---
 
@@ -73,8 +73,8 @@ If you aren't feeling a hot lunch, our cabinet is stacked.
 **Card 1: Sandwiches & Wraps**
 Grab-and-go goodness. Roast Beef, Cajun Tofu (Vegan), or Smoked Chicken.
 
-**Card 2: Famous Pies**
-Brisket, Cranberry & Venison, or flaky meat pies. The locals' favorite.
+**Card 2: Breakfast Options**
+An assortment of breakfast options that you can eat all day long.
 
 **Card 3: Sweet Treats**
 Black Forest Brownies, Walnut Danishes, and GF Banana Caramilk Muffins.
@@ -84,7 +84,7 @@ Black Forest Brownies, Walnut Danishes, and GF Banana Caramilk Muffins.
 ### Testimonial Banner
 
 **Quote:**
-"Really good coffee. Brisket pie 👌"
+"Really good coffee. Really good food 👌"
 
 **Attribution:**
 — Korn Lab, Kettle Korn
@@ -167,7 +167,7 @@ Catering Options
 
 **Card 2: Morning Tea**
 *Corporate shouts & sweet treats.*
-- Famous Brisket & Venison Pies
+- Frittatas & Club Sandwiches
 - Walnut Danishes
 - Vegan Brownies
 - Gluten-Free Muffins
@@ -345,7 +345,7 @@ rumours.on.rust@gmail.com
 
 ### Home Page
 **Title:** Rumours on Rust | Whangārei Café | Fresh Lunch & Organic Coffee
-**Description:** Whangārei's favourite grab-and-go café. Fresh $12 lunch boxes, organic coffee, and legendary pies. Open weekdays 7:30am–2pm on Rust Avenue.
+**Description:** Whangārei's favourite grab-and-go café. Fresh $13 lunch boxes, organic coffee, and fresh cabinet food. Open weekdays 7:30am–2pm on Rust Avenue.
 
 ### Catering Page
 **Title:** Catering Whangārei | Kai Boxes & Office Catering | Rumours on Rust
@@ -365,7 +365,7 @@ Please check:
 3. ✓ Contact information accuracy
 4. ✓ Opening hours accuracy
 5. ✓ Menu items and descriptions
-6. ✓ Pricing ($12 lunch box)
+6. ✓ Pricing ($13 lunch box)
 7. ✓ Tone and voice consistency
 8. ✓ Any factual errors
 
