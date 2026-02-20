@@ -1,0 +1,36 @@
+# Rumours on Rust
+
+> A café and catering business in Whangārei, New Zealand, serving fresh daily lunches, cabinet food, coffee, and catering services.
+
+## About
+
+Rumours on Rust is a café located at 25 Rust Avenue, The Avenues, Whangārei 0110, New Zealand. Open Monday to Friday, 7:30am–2:00pm. We serve daily rotating lunch boxes, freshly made cabinet food, quality coffee, and provide catering for events and workplaces.
+
+- Phone: 021 134 5897
+- Email: rumours.on.rust@gmail.com
+- Facebook: https://www.facebook.com/p/Rumours-On-Rust-61577429531314/
+- Instagram: https://www.instagram.com/rumoursonrust/
+
+## Pages
+
+- [Home](https://rumoursonrust.co.nz/): Daily lunch menu, cabinet food, testimonials, location and opening hours.
+- [Catering](https://rumoursonrust.co.nz/catering): Kai Boxes, morning tea platters, corporate function catering, ordering process, and FAQs.
+- [Contact](https://rumoursonrust.co.nz/contact): Phone, email, social links, opening hours, and location map.
+
+## Menu Highlights
+
+- **Daily Lunch Boxes**: Rotating menu, $13–$17, available for pickup or delivery via Uber Eats.
+- **Cabinet Food**: Sandwiches, baps, salads, overnight oats, and sweet treats.
+- **Dietary Options**: Vegan, gluten-free, dairy-free, and vegetarian options available.
+
+## Catering Services
+
+- **Kai Boxes**: Individual portioned catering boxes for workplaces and events.
+- **Morning Tea**: Platters for meetings and office functions.
+- **Functions**: Custom catering for corporate events, celebrations, and gatherings.
+- **Ordering**: At least 48 hours notice required. Order via phone or email.
+
+## Opening Hours
+
+- Monday–Friday: 7:30am–2:00pm
+- Saturday–Sunday: Closed
